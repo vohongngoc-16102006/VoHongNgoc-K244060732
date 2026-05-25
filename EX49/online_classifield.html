@@ -1,0 +1,184 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Online Classifieds Search Form</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #ccffff; 
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;     
+        }
+        .form-container {
+            width: 100%;
+            max-width: 650px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #ff0000;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 24pt;
+            margin: 0 0 10px 0; 
+            font-weight: normal;
+        }
+
+        .title-divider {
+            border: none;
+            border-top: 2px solid #00aaaa;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            font-size: 12pt;
+            margin-top: 20px;
+            margin-bottom: 12px;
+            color: #000000;
+        }
+
+        .radio-group {
+            display: grid;
+            grid-template-columns: 150px 200px;
+            row-gap: 6px;
+            padding-left: 10px;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 200px 160px 200px;
+            row-gap: 8px;
+            padding-left: 10px;
+            margin-bottom: 20px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            font-size: 11pt;
+            cursor: pointer;
+        }
+
+        .option-label input {
+            margin-right: 6px;
+        }
+
+        input[type="text"], input[type="date"] {
+            border: 1px solid #7f9db9;
+            padding: 3px 5px;
+            font-size: 11pt;
+            background-color: #ffffff;
+        }
+
+        .input-keyword {
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .input-date {
+            width: 130px;
+            text-align: left;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 25px;
+            padding-left: 10px;
+            margin-top: 15px;
+        }
+
+        .action-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            font-size: 11pt;
+            font-weight: bold;
+        }
+
+        .action-btn img {
+            height: 32px; 
+            margin-bottom: 4px;
+        }
+
+        .btn-search { color: #00aa00; }
+        .btn-help { color: #0055ff; }
+        .btn-cancel { color: #ff007f; }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Online Classifieds Search Form</h1>
+        <div class="title-divider"></div>
+
+        <form action="search_results.html" method="get">
+            
+            <div class="section-title">1) Search for a classified in the following sections:</div>
+            <div class="radio-group">
+                <label class="option-label"><input type="radio" name="section" value="employment">Employment</label>
+                <label class="option-label"><input type="radio" name="section" value="personal">Personal</label>
+                <label class="option-label"><input type="radio" name="section" value="for_sale" checked>For Sale</label>
+                <label class="option-label"><input type="radio" name="section" value="miscellaneous">Miscellaneous</label>
+                <label class="option-label"><input type="radio" name="section" value="housing">Housing</label>
+                <label class="option-label"><input type="radio" name="section" value="all">All of the above</label>
+            </div>
+
+            <div class="section-title">2) Search the following publications:</div>
+            <div class="checkbox-group">
+                <label class="option-label"><input type="checkbox" name="pub_midwest" checked>Midwest times</label>
+                <label class="option-label"><input type="checkbox" name="pub_modern">Modern News</label>
+                <label class="option-label"><input type="checkbox" name="pub_employment">Employment Today</label>
+                
+                <label class="option-label"><input type="checkbox" name="pub_great_lakes" checked>Great Lakes Classifieds</label>
+                <label class="option-label"><input type="checkbox" name="pub_middleton">Middleton Daily</label>
+                <label class="option-label"><input type="checkbox" name="pub_cashtown">Cashtown Daily News</label>
+            </div>
+
+            <div class="section-title">
+                3) From 
+                <input type="date" name="date_from" class="input-date"> 
+                to 
+                <input type="date" name="date_to" class="input-date">.
+            </div>
+
+            <div class="section-title">4) Enter a few keywords to describe the classified.</div>
+            <input type="text" name="keywords" class="input-keyword">
+
+            <div class="section-title">5) Click one of the options below:</div>
+            <div class="button-group">
+                <button type="submit" class="action-btn btn-search">
+                    <img src="images/Search.gif" alt="Search Icon">
+                    Search
+                </button>
+                
+                <button type="button" class="action-btn btn-help">
+                    <img src="images/Help.gif" alt="Help Icon">
+                    Help
+                </button>
+                
+                <button type="reset" class="action-btn btn-cancel">
+                    <img src="images/Cancel.gif" alt="Cancel Icon">
+                    Cancel
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
