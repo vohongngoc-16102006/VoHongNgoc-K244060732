@@ -1,0 +1,198 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Jackson Electronics - Registration Form</title>
+    <style>
+        body {
+            background-color: #99ccff; 
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .form-container {
+            width: 600px;
+            text-align: center;
+        }
+        .logo-box {
+            background-color: #00ffff; 
+            border: 2px solid #000000;
+            border-radius: 15px;
+            padding: 10px 20px;
+            display: inline-block;
+            box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2); 
+            margin-bottom: 20px;
+        }
+        .logo-box img {
+            max-height: 80px;
+            display: block;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 24pt;
+            margin: 10px 0 5px 0;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 13pt;
+            margin-bottom: 20px;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #77aadd;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 4px 5px;
+            vertical-align: middle;
+            font-size: 12pt;
+            text-align: left;
+        }
+        input[type="text"], select, textarea {
+            border: 1px solid #777;
+            padding: 2px;
+            font-family: Arial, sans-serif;
+            font-size: 11pt;
+            box-sizing: border-box;
+        }
+        .w-full { width: 100%; }
+        .w-small { width: 80px; }
+        .w-medium { width: 150px; }
+        .options-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+        }
+        .option-item {
+            display: flex;
+            align-items: center;
+        }
+        .option-item input {
+            margin-right: 5px;
+        }
+        .button-group {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .btn {
+            background-color: #eeeeee;
+            border: 1px solid #444444;
+            padding: 3px 10px;
+            font-family: Arial, sans-serif;
+            font-size: 11pt;
+            cursor: pointer;
+            margin: 0 5px;
+            box-shadow: 1px 1px 1px #888888;
+        }
+        .btn:active {
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="logo-box">
+            <img src="images/jackson.gif" alt="Jackson Electronics">
+        </div>
+        <h1>Registration Form</h1>
+        <div class="subtitle">Register your Jackson Electronics product here</div>
+        <form action="process_registration.html" method="post">
+            <table>
+                <tr>
+                    <td style="width: 110px;">First Name:</td>
+                    <td>
+                        <input type="text" name="first_name" style="width: 180px;">
+                        &nbsp;Last Name:
+                        <input type="text" name="last_name" style="width: 170px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address #1:</td>
+                    <td><input type="text" name="address_1" style="width: 300px;"></td>
+                </tr>
+                <tr>
+                    <td>Address #2:</td>
+                    <td><input type="text" name="address_2" style="width: 300px;"></td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td>
+                        <input type="text" name="city" style="width: 210px;">
+                        &nbsp;State:
+                        <input type="text" name="state" class="w-small" maxlength="2">
+                        &nbsp;Zip:
+                        <input type="text" name="zip" class="w-medium">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Country:</td>
+                    <td><input type="text" name="country" value="United States" style="width: 210px;"></td>
+                </tr>
+            </table>
+            <hr>
+            <table>
+                <tr>
+                    <td style="width: 110px;">Product:</td>
+                    <td>
+                        <select name="product" style="width: 180px;">
+                            <option value="ScanMaster">ScanMaster</option>
+                            <option value="LaserJet">LaserJet</option>
+                            <option value="DigiCam">DigiCam</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date Purchased:</td>
+                    <td><input type="date" name="date_purchased" id="date_purchased"></td>
+                </tr>
+                <tr>
+                    <td>Serial #:</td>
+                    <td><input type="text" name="serial_number" style="width: 220px;"></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top; padding-top: 6px;">Used for:</td>
+                    <td>
+                        <div class="options-group">
+                            <div class="option-item"><input type="radio" name="used_for" value="home" id="home"><label for="home">Home</label></div>
+                            <div class="option-item"><input type="radio" name="used_for" value="educational" id="edu"><label for="edu">Educational Institution</label></div>
+                            <div class="option-item"><input type="radio" name="used_for" value="business" id="biz" checked><label for="biz">Business</label></div>
+                            <div class="option-item"><input type="radio" name="used_for" value="other_use" id="other_use"><label for="other_use">Other</label></div>
+                            <div class="option-item"><input type="radio" name="used_for" value="government" id="gov"><label for="gov">Government</label></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top; padding-top: 6px;">System (check all that apply):</td>
+                    <td>
+                        <div class="options-group">
+                            <div class="option-item"><input type="checkbox" name="system_win" id="win"><label for="win">Windows</label></div>
+                            <div class="option-item"><input type="checkbox" name="system_unix" id="unix"><label for="unix">UNIX</label></div>
+                            <div class="option-item"><input type="checkbox" name="system_mac" id="mac"><label for="mac">Macintosh</label></div>
+                            <div class="option-item"><input type="checkbox" name="system_other" id="sys_other"><label for="sys_other">Other</label></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            <table>
+                <tr>
+                    <td style="width: 110px; vertical-align: top; padding-top: 6px;">Comments?:</td>
+                    <td>
+                        <textarea name="comments" rows="6" style="width: 100%; resize: none;"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <div class="button-group">
+                <input type="submit" value="Click to register" class="btn">
+                <input type="reset" value="Click to cancel" class="btn">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
