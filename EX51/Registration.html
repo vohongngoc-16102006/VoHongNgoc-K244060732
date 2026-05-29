@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>About me</title>
+          <style>
+            table { border-spacing: 8px; }
+            td, th { padding: 4px 4px; vertical-align: middle; }
+            tr { height: 22px; }
+            input[type="submit"], input[type="reset"] {
+                padding: 6px 12px;
+                border: 1px solid #c7c7c7;
+                border-radius: 4px;
+                background-color: #ffffff;
+                color: #176767;
+                font-weight: bold;
+                cursor: pointer;
+                box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+            }
+            input[type="submit"]:hover, input[type="reset"]:hover {
+                box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.35);
+            }
+        </style>
+    </head>
+        <body style="background-color:#176767; font-family: Arial, sans-serif; color: #ffffff;">
+            <div align="center">
+                <img src="Logo.gif" width="600px">
+            </div>
+            <h1 style="text-align: center; color: #ffffff;">Newborn Registration</h1>
+            <form action="registration.html" method="post">
+                <table>
+                    <tr>
+                        <td colspan="4">Date: <input type="date" name="date"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">1) Infant's first name: <input type="text" name="first_name"></td>
+                        <td colspan="2">Last: <input type="text" name="last_name"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">2) Medical Record #: <input type="text" name="medical_record"></td>
+                    </tr>
+                     <tr>
+                        <td colspan="4">3) Date of Birth: <input type="date" name="date_of_birth"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">4) Birth Weight: <input type="text" name="birth_weight"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">5) APGAR score: <input type="text" name="apgar_score"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">6) Mother's First Name: <input type="text" name="mother_first_name"></td>
+                        <td colspan="2">Last: <input type="text" name="mother_last_name"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">7) Father's First Name: <input type="text" name="father_first_name"></td>
+                        <td colspan="2">Last: <input type="text" name="father_last_name"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            8) Physician (check all that apply):
+                            <select name="physician" multiple size="4" style="overflow-y: auto;">
+                                <option value="Dr. Smith">Dr. Warren Albert</option>
+                                <option value="Dr. Johnson">Dr. Marria Alvarez</option>
+                                <option value="Dr. Lee">Dr. Karen Brinkman</option>
+                                <option value="Dr. Patel">Dr. Michael Kerry</option>
+                                <option value="Dr. Patel">Dr. Drceutis</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" align="center" style="padding-top: 12px;">
+                            <input type="submit" value="Register" style="box-shadow: 3px 3px 5px rgba(5, 17, 37, 0.5); cursor: pointer;">
+                            <input type="reset" value="Cancel" style="box-shadow: 3px 3px 5px rgba(7, 19, 33, 0.5); cursor: pointer;">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </body>
+</html>
