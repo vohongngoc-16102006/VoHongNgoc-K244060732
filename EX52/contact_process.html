@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Contact Process</title>
+    </head>
+    <body style="background-color: #f9f9f9; font-family: Arial, sans-serif; display: flex; justify-content: center; padding-top: 40px;">
+        
+        <table style="width: 100%; max-width: 650px; background-color: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; box-shadow: 0px 4px 10px rgba(0,0,0,0.05); border-collapse: collapse;">
+            <tr>
+                <td colspan="2" style="font-size: 20px; font-weight: bold; color: #8a2545; padding-bottom: 15px; border-bottom: 2px solid #8a2545;">
+                    Submitted Information
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%; padding-top: 15px; color: #555; font-size: 14px;">
+                    Full name: <br>
+                    <span id="display_name" style="font-weight: bold; color: #000; font-size: 16px; display: inline-block; margin-top: 5px;"></span>
+                </td>
+                <td style="width: 50%; padding-top: 15px; color: #555; font-size: 14px;">
+                    Send to: <br>
+                    <span id="display_send_to" style="font-weight: bold; color: #000; font-size: 16px; display: inline-block; margin-top: 5px;"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%; padding-top: 15px; color: #555; font-size: 14px;">
+                    Email: <br>
+                    <span id="display_email" style="font-weight: bold; color: #000; font-size: 16px; display: inline-block; margin-top: 5px;"></span>
+                </td>
+                <td style="width: 50%; padding-top: 15px; color: #555; font-size: 14px;">
+                    Title: <br>
+                    <span id="display_title" style="font-weight: bold; color: #000; font-size: 16px; display: inline-block; margin-top: 5px;"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="padding-top: 20px; color: #555; font-size: 14px;">
+                    Content: <br>
+                    <div id="display_content" style="font-weight: bold; color: #000; font-size: 15px; border: 1px solid #ddd; background-color: #fafafa; padding: 12px; border-radius: 4px; min-height: 120px; white-space: pre-wrap; margin-top: 5px;"></div>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            document.getElementById('display_name').innerText = urlParams.get('full_name') || "(Trống)";
+            document.getElementById('display_email').innerText = urlParams.get('email') || "(Trống)";
+            document.getElementById('display_send_to').innerText = urlParams.get('send_to') || "(Trống)";
+            document.getElementById('display_title').innerText = urlParams.get('title') || "(Trống)";
+            document.getElementById('display_content').innerText = urlParams.get('content') || "(Trống)";
+        </script>
+    </body>
+</html>
