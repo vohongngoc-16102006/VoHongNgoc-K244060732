@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>GPA Calculator</title>
+        <script>
+            var wtQt = 30, wtGk = 20, wtCk = 50, wtT = 0;
+            function setCourse(c) {
+                if (c == '1') { wtQt = 30; wtGk = 20; wtCk = 50; wtT = 0; }
+                else if (c == '2') { wtQt = 25; wtGk = 25; wtCk = 50; wtT = 0; }
+                else if (c == '3') { wtQt = 15; wtGk = 20; wtCk = 50; wtT = 15; }
+                myform.wtQt.value = wtQt + '%';
+                myform.wtGk.value = wtGk + '%';
+                myform.wtCk.value = wtCk + '%';
+                myform.wtT.value = wtT + '%';
+                xoa();
+            }
+            function tinh() {
+                if (myform.qt.value == "" || myform.gk.value == "" || myform.ck.value == "") 
+                {
+                    myform.ketqua1.value = "Chưa đủ dữ liệu";
+                    myform.ketqua2.value = "Vui lòng nhập QT, GK, CK";
+                    return;
+                }
+                var qt = eval(myform.qt.value);
+                var gk = eval(myform.gk.value);
+                var ck = eval(myform.ck.value);
+                var t = 0;
+
+                if (wtT > 0) {
+                    if (myform.t.value == "") 
+                    {
+                        myform.ketqua1.value = "Chưa đủ dữ liệu";
+                        myform.ketqua2.value = "Vui lòng nhập điểm Tài năng (T)";
+                        return;
+                    }
+                    t = eval(myform.t.value);
+                }
+                var total = (qt * wtQt / 100) + (gk * wtGk / 100) + (ck * wtCk / 100) + (t * wtT / 100);
+                myform.ketqua1.value = "Điểm tổng: " + total;
+                myform.ketqua2.value = total;
+            }
+            function xoa() {
+                myform.qt.value = "";
+                myform.gk.value = "";
+                myform.ck.value = "";
+                myform.t.value = "";
+                myform.ketqua1.value = "";
+                myform.ketqua2.value = "";
+            }
+        </script>
+    </head>
+    <body onload="setCourse('1')">
+        <h3>GPA Calculator</h3>
+        <form name="myform">
+            <table>
+                <tr>
+                    <td>Chọn khóa học:</td>
+                    <td>
+                        <select id="courseSelect" onchange="setCourse(this.value)">
+                            <option value="1">Course 1</option>
+                            <option value="2">Course 2</option>
+                            <option value="3">Course 3</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quá trình (QT):</td>
+                    <td>
+                        <input type="number" name="qt"/>
+                        &nbsp;
+                        <input type="text" name="wtQt" value="30%"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Giữa kỳ (GK):</td>
+                    <td>
+                        <input type="number" name="gk"/>
+                        &nbsp;
+                        <input type="text" name="wtGk" value="20%"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cuối kỳ (CK):</td>
+                    <td>
+                        <input type="number" name="ck"/>
+                        &nbsp;
+                        <input type="text" name="wtCk" value="50%"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tài năng (T):</td>
+                    <td>
+                        <input type="number" name="t"/>
+                        &nbsp;
+                        <input type="text" name="wtT" value="0%" size="4"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Kết quả:</td>
+                    <td><input type="text" name="ketqua1"/></td>
+                </tr>
+                <tr>
+                    <td>Kết quả số:</td>
+                    <td><input type="text" name="ketqua2"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="Tính điểm" onclick="tinh()"/>
+                        &nbsp;
+                        <input type="button" value="Xóa" onclick="xoa()"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
