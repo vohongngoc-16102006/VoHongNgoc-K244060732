@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>About me</title>
+        <script>
+            function solveEquation() {
+                var a = Number(myform.a.value);
+                var b = Number(myform.b.value);
+                var c = Number(myform.c.value);
+                var delta = b * b - 4 * a * c;
+                if(a == 0){
+                    if(b == 0){
+                        if(c == 0){
+                            myform.result.value = "Infinite solutions";
+                        } else {
+                            myform.result.value = "No solution";
+                        }
+                    } else {
+                        myform.result.value = "x = " + (-c/b);
+                    }
+                } else
+                if (delta < 0) {
+                    myform.result.value = "No solution";
+                } else if (delta == 0) {
+                    myform.result.value = "x = " + (-b / (2 * a));
+                } else {
+                    var x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                    var x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                    myform.result.style.color = "red";
+                    myform.result.value = "x1 = " + x1 + ", x2 = " + x2;
+                }
+            }
+            function clearForm() {
+                myform.a.value = "";
+                myform.b.value = "";
+                myform.c.value = "";
+                myform.result.value = "";
+            }
+        </script>
+    </head>
+        <body>
+           <form name="myform">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th colspan="2" style="background-color: rgb(170, 228, 143);">The quadratic equation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td align="center" width="20%">a:</td>
+                        <td><input type="text" name="a"></td>
+                    </tr>
+                    <tr>
+                        <td align="center">b:</td> 
+                        <td><input type="text" name="b"></td>
+                    </tr>
+                    <tr>
+                        <td align="center">c:</td>
+                        <td><input type="text" name="c"></td>
+                    </tr>
+                    <tr>
+                        <td align="center">Result:</td>
+                        <td><input type="text" name="result"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="button" onclick="solveEquation()">Find solution</button>
+                            <button type="button" onclick="clearForm()">Clear</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        </body>
+</html>
