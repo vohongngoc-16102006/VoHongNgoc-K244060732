@@ -1,0 +1,45 @@
+body { font-family: Arial, sans-serif; margin: 20px; }
+form { margin-bottom: 20px; }
+label { display: inline-block; width: 100px; margin-bottom: 10px; }
+table { border-collapse: collapse; width: 100%; }
+th, td { padding: 8px; text-align: left; }
+
+/* CSS để các ô sở thích xuống dòng */
+.hobbies-container div {
+    display: block; /* Mặc định div là block-level, nhưng đây là để nhấn mạnh */
+    margin-bottom: 5px; /* Tạo khoảng cách giữa các sở thích */
+}
+
+/* CSS để các ô màu sắc xuống dòng */
+.colors-container div {
+    display: block; 
+    margin-bottom: 5px; 
+}
+
+/* CSS cơ bản cho chữ màu sắc */
+.color-text {
+    margin-left: 5px; /* Tạo khoảng cách với ô chọn */
+    padding: 2px 5px; /* Tạo một chút khoảng trắng xung quanh chữ */
+    border-radius: 3px; /* Bo góc nhẹ */
+}
+
+/* Các lớp CSS cụ thể cho từng màu */
+.color-blue {
+    color: blue;
+}
+
+.color-red {
+    color: red;
+}
+
+.color-yellow {
+    color: #e6b800; /* Màu vàng tối hơn để dễ đọc trên nền trắng */
+}
+
+.color-green {
+    color: green;
+}
+
+.color-violet {
+    color: violet;
+}

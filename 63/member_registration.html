@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h2>Member Registration</h2>
+    
+    <form id="regForm">
+        <label>Name(*)</label> <input type="text" id="name" required><br>
+        
+        <label>Birthday(*)</label> 
+        Day: <select id="day"></select> 
+        Month: <select id="month"></select> 
+        Year: <select id="year"></select><br>
+        
+        <label>Gender(*)</label> 
+        <input type="radio" name="gender" value="Man" checked> Man 
+        <input type="radio" name="gender" value="Woman"> Woman<br>
+        
+        <label>Email(*)</label> <input type="email" id="email" required><br>
+
+        <p>Your favorite:</p>
+        <div class="hobbies-container">
+            <div><input type="checkbox" value="Shopping"> Shopping</div>
+            <div><input type="checkbox" value="Tourism"> Tourism</div>
+            <div><input type="checkbox" value="Chat"> Chat</div>
+            <div><input type="checkbox" value="Read a book"> Read a book</div>
+            <div><input type="checkbox" value="Listening to music"> Listening to music</div>
+        </div>
+        <br>
+
+        <p>Your favorite color:</p>
+        <div class="colors-container">
+            <div><input type="radio" name="color" value="Blue"><span class="color-text color-blue">Blue</span></div>
+            <div><input type="radio" name="color" value="Red"><span class="color-text color-red">Red</span></div>
+            <div><input type="radio" name="color" value="Yellow"><span class="color-text color-yellow">Yellow</span></div>
+            <div><input type="radio" name="color" value="Green"><span class="color-text color-green">Green</span></div>
+            <div><input type="radio" name="color" value="Violet"><span class="color-text color-violet">Violet</span></div>
+        </div>
+        <br>
+
+        <button type="button" onclick="addData()">Sign up</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    <table id="memberTable" border="1" style="margin-top: 20px;">
+        <thead>
+            <tr style="background-color: blue; color: white;">
+                <th>Name</th><th>Email</th><th>Gender</th><th>Birthday</th><th>Hobbies</th><th>Colors</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>John</td><td>john@gmail.com</td><td>Man</td><td>02/02/1990</td><td>Reading</td><td>Yellow</td></tr>
+            <tr><td>Peter</td><td>peter@gmail.com</td><td>Man</td><td>01/01/1992</td><td>chat, reading</td><td>Red</td></tr>
+            <tr><td>Lucy</td><td>lucy@gmail.com</td><td>Woman</td><td>01/02/2005</td><td>Listening, Chat</td><td>Violet</td></tr>
+        </tbody>
+    </table>
+    <script src="js/Form.js"></script>
+</body>
+</html>
