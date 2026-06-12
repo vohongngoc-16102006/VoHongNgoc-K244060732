@@ -1,0 +1,62 @@
+<html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 65 - Dynamic List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="top">
+
+        <div class="buttons">
+            <button onclick="addNode()">Add Node</button>
+            <button onclick="removeNode()">Remove Node</button>
+            <button onclick="modifyNode()">Modify Node</button>
+        </div>
+
+        <div class="form-area">
+
+            <div class="row">
+                <label>Content</label>
+                <input type="text" id="content">
+
+                <label>Position</label>
+                <input type="number" id="addPos">
+            </div>
+
+            <div class="row">
+                <label>New Content</label>
+                <input type="text" id="newContent">
+
+                <label>Position</label>
+                <input type="number" id="modifyPos">
+            </div>
+
+            <div class="row remove-row">
+                <div></div>
+                <div></div>
+
+                <label>Position</label>
+                <input type="number" id="removePos">
+            </div>
+
+        </div>
+
+    </div>
+
+    <h2>Web Node</h2>
+
+    <ul id="webNode">
+        <li>Data base</li>
+        <li>Web1</li>
+        <li>Web2</li>
+    </ul>
+
+</div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
