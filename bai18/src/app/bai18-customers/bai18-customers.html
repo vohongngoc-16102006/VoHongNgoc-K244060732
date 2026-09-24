@@ -1,0 +1,40 @@
+<h2>Bài 18 - Khách hàng theo nhóm</h2>
+
+<p *ngIf="errorMessage" style="color: red">
+  {{ errorMessage }}
+</p>
+
+<div *ngFor="let group of groups">
+  <h3>
+    Nhóm {{ group.CustomerTypeId }}:
+    {{ group.CustomerTypeName }}
+  </h3>
+
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Mã khách hàng</th>
+        <th>Tên khách hàng</th>
+        <th>Email</th>
+        <th>Tuổi</th>
+        <th>Ảnh</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let customer of group.Customers">
+        <td>{{ customer.Id }}</td>
+        <td>{{ customer.Name }}</td>
+        <td>{{ customer.Email }}</td>
+        <td>{{ customer.Age }}</td>
+        <td>
+          <img [src]="customer.Image"
+               [alt]="customer.Name"
+               width="70">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+</div>
