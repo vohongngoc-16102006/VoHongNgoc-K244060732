@@ -1,0 +1,29 @@
+<h2>Bài 14 - Danh mục sản phẩm</h2>
+
+<div *ngFor="let category of categories">
+  <h3>{{ category.Cateid }} - {{ category.CateName }}</h3>
+
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Mã sản phẩm</th>
+        <th>Tên sản phẩm</th>
+        <th>Giá</th>
+        <th>Ảnh</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let product of category.Products">
+        <td>{{ product.ProductId }}</td>
+        <td>{{ product.ProductName }}</td>
+        <td>{{ product.Price }}</td>
+        <td>
+          <img [src]="product.Image" [alt]="product.ProductName" width="70">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+</div>
